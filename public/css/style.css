@@ -34,7 +34,8 @@ body {
 }
 
 .recipe-card {
-  height: 380px;
+  height: fit-content;
+  min-height: 380px;
   width: 250px;
   background: white;
   color: black;
@@ -57,11 +58,22 @@ body {
 
 .hidden-ingrediants {
   height: fit-content;
-  width: fit-content;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
   display: none;
+  margin: 0px 10px;
+  padding: 10px;
+  text-align: justify;
+}
 
-  height: 300px;
-  width: 300px;
-  position: absolute;
-  background-color: white;
+.recipe-info {
+  min-height: 130px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
 }

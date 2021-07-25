@@ -24,7 +24,6 @@ window.onload = () => {
     document.getElementById('recipes-box').textContent = '';
     let recipes = Array.from(data.hits);
     recipes.map((recipe) => {
-      console.log(recipe.recipe.ingredientLines);
       const recipeCard = document.createElement('div');
       const recipeImg = document.createElement('img');
       const recipeTitle = document.createElement('h3');
@@ -32,33 +31,35 @@ window.onload = () => {
       const recipeCalories = document.createElement('span');
       const recipeIngredients = document.createElement('span');
       const hiddenIngredients = document.createElement('div');
+      const recipeInfo = document.createElement('div');
 
       recipeCard.classList.add('recipe-card');
       recipeBottom.classList.add('recipe-card-bottom');
       recipeCalories.classList.add('recipe-calories');
       recipeIngredients.classList.add('recipe-ingredients');
       hiddenIngredients.classList.add('hidden-ingrediants');
+      recipeInfo.classList.add('recipe-info');
 
       recipeImg.src = recipe.recipe.image;
       recipeTitle.innerText = recipe.recipe.label;
       recipeCalories.innerText =
         'Calories: ' + Math.round(recipe.recipe.calories);
       recipeIngredients.textContent = 'Ingredients';
-      hiddenIngredients.innerText = recipe.recipe.inredientLines;
+      hiddenIngredients.innerText = recipe.recipe.ingredientLines;
       recipeBottom.appendChild(recipeCalories);
       recipeBottom.appendChild(recipeIngredients);
-      recipeBottom.appendChild(hiddenIngredients);
+      recipeInfo.appendChild(recipeTitle);
+      recipeInfo.appendChild(recipeBottom);
 
       recipeCard.appendChild(recipeImg);
-      recipeCard.appendChild(recipeTitle);
-      recipeCard.appendChild(recipeBottom);
+      recipeCard.appendChild(recipeInfo);
+      recipeCard.appendChild(hiddenIngredients);
 
       document.getElementById('recipes-box').appendChild(recipeCard);
 
       recipeCard.addEventListener('click', (e) => {
         if (e.target.className === 'recipe-ingredients') {
-          console.log(e.target.nextSibling);
-          e.target.nextSibling.style.display = 'block';
+          e.target.parentNode.parentNode.nextSibling.style.display = 'block';
         }
       });
     });

@@ -7,6 +7,7 @@
 body {
   min-height: 100vh;
   background: linear-gradient(#1d2671, #c33764);
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -27,4 +28,40 @@ body {
   width: 90%;
   background-color: rgba(0, 0, 0, 0.35);
   background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0));
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.recipe-card {
+  height: 380px;
+  width: 250px;
+  background: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  padding: 5px;
+}
+.recipe-card img {
+  width: 100%;
+}
+
+.recipe-card-bottom {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.hidden-ingrediants {
+  height: fit-content;
+  width: fit-content;
+  display: none;
+
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  background-color: white;
 }

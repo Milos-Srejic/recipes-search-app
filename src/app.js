@@ -59,7 +59,16 @@ window.onload = () => {
 
       recipeCard.addEventListener('click', (e) => {
         if (e.target.className === 'recipe-ingredients') {
-          e.target.parentNode.parentNode.nextSibling.style.display = 'block';
+          if (
+            e.target.parentNode.parentNode.nextSibling.style.display === '' ||
+            e.target.parentNode.parentNode.nextSibling.style.display === 'none'
+          ) {
+            e.target.parentNode.parentNode.nextSibling.style.display = 'block';
+          } else if (
+            e.target.parentNode.parentNode.nextSibling.style.display === 'block'
+          ) {
+            e.target.parentNode.parentNode.nextSibling.style.display = 'none';
+          }
         }
       });
     });

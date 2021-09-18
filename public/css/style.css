@@ -82,3 +82,15 @@ body {
 .recipe-ingredients {
   cursor: pointer;
 }
+
+@media screen and (max-width: 450px) {
+  .search-box input {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .search-box input {
+    width: 200px;
+  }
+}
